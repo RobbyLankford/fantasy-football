@@ -40,3 +40,9 @@ Distribution of average number of weekly points for each team from 1000
 simulations of 2022 season.
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+## Weekly Simulations
+
+| Week |              Link               |
+|:----:|:-------------------------------:|
+|  1   | [Simulation Result](/Week%201/) |

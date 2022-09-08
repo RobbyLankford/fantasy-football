@@ -100,10 +100,10 @@ result_points <- points_tbl %>%
 
 The overall results of simulating the `r this_season` season `r num_seasons` times are shown below.
 
-| Metric                  | Team              | Value      |
+|         Metric          |       Team        |   Value    |
 |:-----------------------:|:-----------------:|:----------:|
 |  Wins (season median)   |  `r result_wins`  |  `r wins`  |
-| Rank (most #1 finishes) |  `r result_rank`  |   `r rank` |
+| Rank (most #1 finishes) |  `r result_rank`  |  `r rank`  |
 | Points (weekly median)  | `r result_points` | `r points` |
 
 ### Wins
@@ -129,3 +129,9 @@ Distribution of average number of weekly points for each team from `r num_season
 ```{r}
 autoplot(espn_sim, type = "points") + scale_fill_viridis_d()
 ```
+
+## Weekly Simulations
+
+| Week | Link                          |
+|:----:|:-----------------------------:|
+|  1   | [Simulation Result](/Week 1/) |
