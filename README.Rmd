@@ -1,0 +1,131 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE,
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE
+)
+
+library(ffsimulator)
+library(dplyr)
+library(ggplot2)
+
+this_season <- 2022
+espn_league <- 31003357
+num_seasons <- 1000
+num_weeks   <- 14
+rand_seed   <- 1914
+```
+
+# No Allys Here: 2022 Fantasy Football Season
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+This repository holds full season and weekly simulations for the No Allys Here 2022 Fantasy Football season.
+
+## Full Season Simulation
+
+```{r}
+conn <- espn_connect(season = this_season, league_id = espn_league)
+
+espn_sim <- ff_simulate(
+  conn, 
+  n_seasons = num_seasons,
+  n_weeks   = num_weeks,
+  seed      = rand_seed
+)
+```
+
+```{r}
+#> Wins
+wins_tbl <- espn_sim$summary_season %>% 
+  as_tibble() %>% 
+  group_by(franchise_name) %>% 
+  summarize(median_wins = median(h2h_wins, na.rm = TRUE)) %>% 
+  ungroup()
+
+wins <- max(wins_tbl$median_wins)
+
+result_wins <- wins_tbl %>% 
+  filter(median_wins == max(median_wins)) %>%
+  arrange(franchise_name) %>% 
+  pull(franchise_name) %>% 
+  paste(collapse = ", ")
+
+
+#> Ranking
+rank_tbl <- espn_sim$summary_season %>% 
+  as_tibble() %>%
+  group_by(season) %>% 
+  mutate(season_rank = rank(-h2h_wins, ties.method = "min")) %>% 
+  ungroup() %>%
+  group_by(franchise_name) %>% 
+  count(season_rank) %>% 
+  filter(season_rank == 1) %>% 
+  ungroup() %>% 
+  filter(n == max(n))
+
+rank <- max(rank_tbl$n)
+
+result_rank <- rank_tbl %>% 
+  arrange(franchise_name) %>% 
+  pull(franchise_name) %>% 
+  paste(collapse = ", ")
+
+
+#> Points
+points_tbl <- espn_sim$summary_week %>% 
+  as_tibble() %>% 
+  group_by(franchise_name) %>% 
+  summarize(median_points = median(team_score, na.rm = TRUE)) %>% 
+  ungroup()
+
+points <- ceiling(max(points_tbl$median_points))
+
+result_points <- points_tbl %>% 
+  filter(median_points == max(median_points)) %>% 
+  arrange(franchise_name) %>% 
+  pull(franchise_name) %>% 
+  paste(collapse = ", ")
+```
+
+The overall results of simulating the `r this_season` season `r num_seasons` times are shown below.
+
+| Metric                  | Team              | Value      |
+|:-----------------------:|:-----------------:|:----------:|
+|  Wins (season median)   |  `r result_wins`  |  `r wins`  |
+| Rank (most #1 finishes) |  `r result_rank`  |   `r rank` |
+| Points (weekly median)  | `r result_points` | `r points` |
+
+### Wins
+
+Distribution of total season wins for each team from `r num_seasons` simulations of the `r this_season` season.
+
+```{r}
+autoplot(espn_sim, type = "wins") + scale_fill_viridis_d()
+```
+
+### Final Ranking
+
+Distribution of final ranking for each team from `r num_seasons` simulations of the `r this_season` season.
+
+```{r}
+autoplot(espn_sim, type = "rank") + scale_fill_viridis_d()
+```
+
+### Total Points
+
+Distribution of average number of weekly points for each team from `r num_seasons` simulations of `r this_season` season.
+
+```{r}
+autoplot(espn_sim, type = "points") + scale_fill_viridis_d()
+```
