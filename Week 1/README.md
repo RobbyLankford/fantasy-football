@@ -9,10 +9,10 @@
 The overall results of simulating Week 1 season 100 times are shown
 below.
 
-|        Metric         |            Team             | Value |
-|:---------------------:|:---------------------------:|:-----:|
-|  Highest Points For   | Country Roads, Take Mahomes |  74   |
-| Lowest Points Against |      Bailey’s Ballers       |  32   |
+|        Metric         |       Team        | Value |
+|:---------------------:|:-----------------:|:-----:|
+|  Highest Points For   |   Team 5DChess    |  75   |
+| Lowest Points Against | Detroit Stilletos |  62   |
 
 ## Predicted Results
 
@@ -38,44 +38,16 @@ Team 2 Score
 <tbody>
 <tr>
 <td style="text-align:center;">
-Bailey’s Ballers
-</td>
-<td style="text-align:center;">
-Sink or Swim
-</td>
-<td style="text-align:center;">
-41
-</td>
-<td style="text-align:center;">
-32
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
 Boss Hogg Ballers
 </td>
 <td style="text-align:center;">
 Team Garcia
 </td>
 <td style="text-align:center;">
-65
+68
 </td>
 <td style="text-align:center;">
-41
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Country Roads, Take Mahomes
-</td>
-<td style="text-align:center;">
-Team Schocklin
-</td>
-<td style="text-align:center;">
-74
-</td>
-<td style="text-align:center;">
-45
+63
 </td>
 </tr>
 <tr>
@@ -86,10 +58,52 @@ Detroit Stilletos
 Trust The Numbers
 </td>
 <td style="text-align:center;">
-70
+71
 </td>
 <td style="text-align:center;">
-58
+62
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Sink or Swim
+</td>
+<td style="text-align:center;">
+Bailey’s Ballers
+</td>
+<td style="text-align:center;">
+68
+</td>
+<td style="text-align:center;">
+65
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Team 5DChess
+</td>
+<td style="text-align:center;">
+Team Luetkehans
+</td>
+<td style="text-align:center;">
+75
+</td>
+<td style="text-align:center;">
+69
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Team Goodell
+</td>
+<td style="text-align:center;">
+Team karpowicz
+</td>
+<td style="text-align:center;">
+75
+</td>
+<td style="text-align:center;">
+75
 </td>
 </tr>
 <tr>
@@ -100,10 +114,10 @@ Team karpowicz
 Team Goodell
 </td>
 <td style="text-align:center;">
-68
+75
 </td>
 <td style="text-align:center;">
-37
+75
 </td>
 </tr>
 <tr>
@@ -114,24 +128,24 @@ Team Lankford
 Team Mike
 </td>
 <td style="text-align:center;">
-66
+68
 </td>
 <td style="text-align:center;">
-41
+66
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-Team Luetkehans
+Team Schocklin
 </td>
 <td style="text-align:center;">
-Team 5DChess
+Country Roads, Take Mahomes
 </td>
 <td style="text-align:center;">
-72
+67
 </td>
 <td style="text-align:center;">
-70
+65
 </td>
 </tr>
 </tbody>
