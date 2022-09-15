@@ -14,11 +14,11 @@ Allys Here 2022 Fantasy Football season.
 The overall results of simulating the 2022 season 1000 times are shown
 below.
 
-|          Metric          |                                Team                                | Value |
-|:------------------------:|:------------------------------------------------------------------:|:-----:|
-|   Wins (season median)   | Boss Hogg Ballers, Detroit Stilletos, Team 5DChess, Team karpowicz |   8   |
-| Rank (most \#1 finishes) |                            Team 5DChess                            |  221  |
-|  Points (weekly median)  |                            Team 5DChess                            |  88   |
+|          Metric          |                                     Team                                     | Value |
+|:------------------------:|:----------------------------------------------------------------------------:|:-----:|
+|   Wins (season median)   | Detroit Stilletos, Team 5DChess, Team Goodell, Team karpowicz, Team Lankford |   8   |
+| Rank (most \#1 finishes) |                                 Team 5DChess                                 |  248  |
+|  Points (weekly median)  |                                 Team 5DChess                                 |  88   |
 
 ### Wins
 
@@ -46,3 +46,4 @@ simulations of 2022 season.
 | Week |              Link               |
 |:----:|:-------------------------------:|
 |  1   | [Simulation Result](/Week%201/) |
+|  2   | [Simulation Result](/Week%202/) |

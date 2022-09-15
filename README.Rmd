@@ -10,7 +10,8 @@ knitr::opts_chunk$set(
   echo = FALSE,
   comment = "#>",
   message = FALSE,
-  warning = FALSE
+  warning = FALSE,
+  cache = TRUE
 )
 
 library(ffsimulator)
@@ -135,3 +136,4 @@ autoplot(espn_sim, type = "points") + scale_fill_viridis_d()
 | Week | Link                          |
 |:----:|:-----------------------------:|
 |  1   | [Simulation Result](/Week 1/) |
+|  2   | [Simulation Result](/Week 2/) |
