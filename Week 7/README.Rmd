@@ -1,0 +1,106 @@
+---
+output: github_document
+always_allow_html: true
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE,
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE,
+  fig.align = "c"
+)
+
+library(ffsimulator)
+library(dplyr)
+library(ggplot2)
+library(kableExtra)
+
+this_season <- 2022
+this_week   <- 7
+espn_league <- 31003357
+num_iter    <- 100
+rand_seed   <- 1914
+```
+
+# 2022 Fantasy Football Season: Week `r this_week`
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+```{r}
+conn <- espn_connect(season = this_season, league_id = espn_league)
+
+espn_wk1_sim <- ff_simulate_week(conn, n = num_iter, seed = rand_seed)
+```
+
+```{r}
+#> Points
+points_tbl <- espn_wk1_sim$summary_week %>% 
+  as_tibble() %>% 
+  group_by(franchise_name) %>% 
+  summarize(
+    median_points_for = median(team_score, na.rm = TRUE),
+    median_points_against = median(opponent_score, na.rm = TRUE)
+  ) %>% 
+  ungroup()
+
+points_for <- round(max(points_tbl$median_points_for))
+points_against <- round(min(points_tbl$median_points_against))
+
+result_points_for <- points_tbl %>% 
+  filter(median_points_for == max(median_points_for)) %>% 
+  arrange(franchise_name) %>% 
+  pull(franchise_name) %>% 
+  paste(collapse = ", ")
+
+result_points_against <- points_tbl %>% 
+  filter(median_points_against == min(median_points_against)) %>% 
+  arrange(franchise_name) %>% 
+  pull(franchise_name) %>% 
+  paste(collapse = ", ")
+```
+
+The overall results of simulating Week `r this_week` season `r num_iter` times are shown below.
+
+| Metric                | Team                      | Value              |
+|:---------------------:|:-------------------------:|:------------------:|
+| Highest Points For    | `r result_points_for`     | `r points_for`     |
+| Lowest Points Against | `r result_points_against` | `r points_against` |
+
+## Predicted Results
+
+The predicted win/loss and points for Week `r this_week` after `r num_iter` simulations.
+
+```{r}
+espn_wk1_sim$summary_week %>% 
+  as_tibble() %>% 
+  group_by(franchise_name, opponent_name) %>% 
+  summarize(
+    med_team_score = round(median(team_score, na.rm = TRUE), 0),
+    med_opp_score  = round(median(opponent_score, na.rm = TRUE), 0)
+  ) %>% 
+  ungroup() %>% 
+  filter(med_team_score >= med_opp_score) %>% 
+  rename(
+    `Team 1` = franchise_name,
+    `Team 2` = opponent_name,
+    `Team 1 Score` = med_team_score,
+    `Team 2 Score` = med_opp_score
+  ) %>% 
+  kable(align = "c") %>% 
+  kable_styling("hover", full_width = FALSE, position = "center")
+```
+
+## Predicted Points
+
+Distribution of predicted number of points for Week `r this_week` after `r num_iter` simulations.
+
+```{r}
+autoplot(espn_wk1_sim, type = "points") + scale_fill_viridis_d()
+```

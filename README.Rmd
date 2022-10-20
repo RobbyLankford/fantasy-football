@@ -141,4 +141,4 @@ autoplot(espn_sim, type = "points") + scale_fill_viridis_d()
 |  4   | [Simulation Result](/Week 4/) |
 |  5   | [Simulation Result](/Week 5/) |
 |  6   | [Simulation Result](/Week 6/) |
-
+|  7   | [Simulation Result](/Week 7/) |
