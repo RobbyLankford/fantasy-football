@@ -53,3 +53,4 @@ simulations of 2022 season.
 |  6   | [Simulation Result](/Week%206/) |
 |  7   | [Simulation Result](/Week%207/) |
 |  8   | [Simulation Result](/Week%208/) |
+|  9   | [Simulation Result](/Week%209/) |
