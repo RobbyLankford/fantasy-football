@@ -133,14 +133,15 @@ autoplot(espn_sim, type = "points") + scale_fill_viridis_d()
 
 ## Weekly Simulations
 
-| Week | Link                          |
-|:----:|:-----------------------------:|
-|  1   | [Simulation Result](/Week 1/) |
-|  2   | [Simulation Result](/Week 2/) |
-|  3   | [Simulation Result](/Week 3/) |
-|  4   | [Simulation Result](/Week 4/) |
-|  5   | [Simulation Result](/Week 5/) |
-|  6   | [Simulation Result](/Week 6/) |
-|  7   | [Simulation Result](/Week 7/) |
-|  8   | [Simulation Result](/Week 8/) |
-|  9   | [Simulation Result](/Week 9/) |
+| Week | Link                           |
+|:----:|:------------------------------:|
+|  1   | [Simulation Result](/Week 1/)  |
+|  2   | [Simulation Result](/Week 2/)  |
+|  3   | [Simulation Result](/Week 3/)  |
+|  4   | [Simulation Result](/Week 4/)  |
+|  5   | [Simulation Result](/Week 5/)  |
+|  6   | [Simulation Result](/Week 6/)  |
+|  7   | [Simulation Result](/Week 7/)  |
+|  8   | [Simulation Result](/Week 8/)  |
+|  9   | [Simulation Result](/Week 9/)  |
+|  10  | [Simulation Result](/Week 10/) |

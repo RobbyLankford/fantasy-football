@@ -43,14 +43,15 @@ simulations of 2022 season.
 
 ## Weekly Simulations
 
-| Week |              Link               |
-|:----:|:-------------------------------:|
-|  1   | [Simulation Result](/Week%201/) |
-|  2   | [Simulation Result](/Week%202/) |
-|  3   | [Simulation Result](/Week%203/) |
-|  4   | [Simulation Result](/Week%204/) |
-|  5   | [Simulation Result](/Week%205/) |
-|  6   | [Simulation Result](/Week%206/) |
-|  7   | [Simulation Result](/Week%207/) |
-|  8   | [Simulation Result](/Week%208/) |
-|  9   | [Simulation Result](/Week%209/) |
+| Week |               Link               |
+|:----:|:--------------------------------:|
+|  1   | [Simulation Result](/Week%201/)  |
+|  2   | [Simulation Result](/Week%202/)  |
+|  3   | [Simulation Result](/Week%203/)  |
+|  4   | [Simulation Result](/Week%204/)  |
+|  5   | [Simulation Result](/Week%205/)  |
+|  6   | [Simulation Result](/Week%206/)  |
+|  7   | [Simulation Result](/Week%207/)  |
+|  8   | [Simulation Result](/Week%208/)  |
+|  9   | [Simulation Result](/Week%209/)  |
+|  10  | [Simulation Result](/Week%2010/) |
